@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@vee-validate/yup": "^4.15.1"
+  }
+}
