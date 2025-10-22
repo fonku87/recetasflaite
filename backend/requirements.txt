@@ -7,3 +7,4 @@ django-autoslug==1.9.9
 python-jose==3.3.0
 drf-yasg==1.21.6
 setuptools==80.9.0
+gunicorn==23.0.0
