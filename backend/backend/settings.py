@@ -103,6 +103,7 @@ DATABASES = {
         'HOST': os.getenv('DATABASE_SERVER'),
         'PORT': os.getenv('DATABASE_PORT'),
         'OPTIONS': {
+            'ssl': {'ssl-mode': 'REQUIRED'} if os.getenv('DATABASE_SSL') == 'True' else {},
             'autocommit': True
         }
     }
