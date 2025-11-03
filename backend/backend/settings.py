@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-hl-%jotn7qo2a1l&ui*0kze3gqw94i9x)3-=$f*7oro%d#utxl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['192.168.56.1']
+ALLOWED_HOSTS =  os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 
 # Application definition
@@ -103,6 +103,7 @@ DATABASES = {
         'HOST': os.getenv('DATABASE_SERVER'),
         'PORT': os.getenv('DATABASE_PORT'),
         'OPTIONS': {
+            'ssl': {'ssl-mode': 'REQUIRED'} if os.getenv('DATABASE_SSL') == 'True' else {},
             'autocommit': True
         }
     }
